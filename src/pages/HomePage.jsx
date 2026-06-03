@@ -8,6 +8,7 @@ import NatureIcon from '@mui/icons-material/Nature';
 import SecurityIcon from '@mui/icons-material/Security';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import bgImage from '../assets/backgroud/bg_1.png';
+import ChargingStationMap from '../components/ChargingStationMap';
 
 const HomePage = () => {
   return (
@@ -158,6 +159,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Charging Station Map Section */}
+      <ChargingStationMap />
 
       {/* News Section */}
       <section className="py-20">
