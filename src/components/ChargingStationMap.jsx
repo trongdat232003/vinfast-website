@@ -96,7 +96,9 @@ const ChargingStationMap = () => {
     return matchCity && matchSearch;
   });
 
+  // eslint-disable-next-line no-unused-vars
   const fastCount = filtered.filter(s => s.type === 'fast').length;
+  // eslint-disable-next-line no-unused-vars
   const normalCount = filtered.filter(s => s.type === 'normal').length;
 
   return (
