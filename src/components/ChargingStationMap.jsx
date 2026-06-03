@@ -109,7 +109,7 @@ const ChargingStationMap = () => {
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold mb-4">Tìm Trạm Sạc VinFast</h2>
           <p className="text-gray-600">
-            Hơn <span className="text-blue-600 font-bold">{chargingStationsData.length}+</span> trạm sạc phủ khắp toàn quốc -
+            Hơn <span className="text-blue-600 font-bold">200+</span> trạm sạc phủ khắp toàn quốc -
             sạc nhanh DC lên đến <span className="text-blue-600 font-bold">120 kW</span>
           </p>
         </div>
