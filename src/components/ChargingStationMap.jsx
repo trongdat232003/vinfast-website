@@ -145,9 +145,9 @@ const ChargingStationMap = () => {
         {/* Map + List */}
         <div className="flex flex-col lg:flex-row gap-6 max-w-7xl mx-auto">
 
-          {/* Map */}
-          <div className="flex-1 rounded-2xl overflow-hidden border border-gray-200 shadow-lg" style={{ height: 520 }}>
-            <MapContainer center={[16.047079, 108.20623]} zoom={6} style={{ height: '100%', width: '100%' }}>
+          {/* Map - Always visible */}
+          <div className="w-full lg:flex-1 rounded-2xl overflow-hidden border border-gray-200 shadow-lg h-[450px] md:h-[500px] lg:h-[520px]">
+            <MapContainer center={[16.047079, 108.20623]} zoom={6} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
               <MapFlyTo center={mapCenter} zoom={mapZoom} />
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -201,7 +201,7 @@ const ChargingStationMap = () => {
           </div>
 
           {/* Station List */}
-          <div className="lg:w-80 flex flex-col gap-2 overflow-y-auto pr-1" style={{ maxHeight: 520 }}>
+          <div className="w-full lg:w-80 flex flex-col gap-2 overflow-y-auto pr-1 max-h-[450px] md:max-h-[500px] lg:max-h-[520px]">
             {filtered.length === 0 ? (
               <div className="text-center text-gray-400 py-16">
                 <span className="material-icons" style={{ fontSize: 48, opacity: 0.3 }}>ev_station</span>

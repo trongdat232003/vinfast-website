@@ -83,16 +83,16 @@ const ServiceDetailPage = () => {
         <div className="bg-blue-50 rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Cần hỗ trợ thêm?</h3>
           <p className="text-gray-600 mb-6">Liên hệ với chúng tôi để được tư vấn chi tiết</p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col gap-4 max-w-md mx-auto">
             <a 
               href="tel:1900232389"
-              className="bg-blue-600 text-white px-8 py-3 rounded font-medium hover:bg-blue-700 transition"
+              className="w-full bg-blue-600 text-white px-8 py-3 rounded font-medium hover:bg-blue-700 transition text-center"
             >
               Gọi ngay: 1900 23 23 89
             </a>
             <button 
               onClick={() => navigate('/dat-lai-thu')}
-              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded font-medium hover:bg-blue-50 transition"
+              className="w-full border-2 border-blue-600 text-blue-600 px-8 py-3 rounded font-medium hover:bg-blue-50 transition"
             >
               Đặt lịch hẹn
             </button>

@@ -28,22 +28,31 @@ const PromotionDetailPage = () => {
 
   return (
     <div className="pt-[70px] min-h-screen bg-gray-50">
-      {/* Hero */}
-      <div className="relative h-[500px] bg-gray-900 flex items-center justify-center">
-        <img 
-          src={promo.image} 
-          alt={promo.title}
-          className="max-w-full max-h-full object-contain p-8"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-40 pointer-events-none"></div>
+      {/* Hero with Background Image */}
+      <div 
+        className="relative h-[400px] md:h-[500px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${promo.image})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        
+        {/* Discount Badge - Top Left */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 z-10">
+          <div className="inline-flex items-center bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full font-bold shadow-lg">
+            <LocalOfferIcon className="mr-2" />
+            <span>Giảm giá: {promo.discount}</span>
+          </div>
+        </div>
+        
+        {/* Content */}
         <div className="relative container mx-auto px-4 h-full flex items-center max-w-4xl">
-          <div>
-            <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-full font-bold mb-4 flex items-center">
-              <LocalOfferIcon className="mr-2" />
-              Giảm giá: {promo.discount}
-            </div>
-            <h1 className="text-5xl font-bold text-white mb-4">{promo.title}</h1>
-            <p className="text-xl text-white">{promo.excerpt}</p>
+          <div className="text-white">
+            <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight">
+              {promo.title}
+            </h1>
+            <p className="text-base md:text-xl opacity-90 max-w-2xl">
+              {promo.excerpt}
+            </p>
           </div>
         </div>
       </div>
@@ -79,16 +88,16 @@ const PromotionDetailPage = () => {
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Quan tâm đến chương trình này?</h3>
           <p className="mb-6">Liên hệ ngay với chúng tôi để được tư vấn chi tiết</p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col gap-4 max-w-md mx-auto">
             <a 
               href="tel:1900232389"
-              className="bg-white text-blue-600 px-8 py-3 rounded font-medium hover:bg-gray-100 transition"
+              className="w-full bg-white text-blue-600 px-8 py-3 rounded font-medium hover:bg-gray-100 transition text-center"
             >
               Gọi ngay: 1900 23 23 89
             </a>
             <button 
               onClick={() => navigate('/dat-lai-thu')}
-              className="border-2 border-white text-white px-8 py-3 rounded font-medium hover:bg-blue-700 transition"
+              className="w-full border-2 border-white text-white px-8 py-3 rounded font-medium hover:bg-blue-700 transition"
             >
               Đặt lái thử
             </button>

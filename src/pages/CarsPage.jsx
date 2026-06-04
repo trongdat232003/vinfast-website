@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { carsData } from '../data/carsData';
 
 const CarsPage = () => {
   const [filter, setFilter] = useState('all');
+  const filterRefs = useRef({});
 
   const categories = [
     { id: 'all', name: 'Tất cả' },
@@ -13,6 +14,19 @@ const CarsPage = () => {
     { id: 'pickup', name: 'Bán tải' },
     { id: 'minivan', name: 'Minivan' }
   ];
+
+  const handleFilterClick = (filterId) => {
+    setFilter(filterId);
+    
+    // Scroll filter button into view on mobile
+    if (filterRefs.current[filterId]) {
+      filterRefs.current[filterId].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start'
+      });
+    }
+  };
 
   const filteredCars = filter === 'all' 
     ? carsData 
@@ -29,14 +43,16 @@ const CarsPage = () => {
       </div>
 
       {/* Filter */}
-      <div className="bg-white shadow-md sticky top-[70px] z-10">
+      <div className="bg-white shadow-md sticky top-[70px] z-40">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-wrap gap-3 justify-center">
+          {/* Mobile: Horizontal scrollable filters */}
+          <div className="flex gap-3 overflow-x-auto scrollbar-hide md:justify-center">
             {categories.map(cat => (
               <button
                 key={cat.id}
-                onClick={() => setFilter(cat.id)}
-                className={`px-6 py-2 rounded-full font-medium transition ${
+                ref={(el) => (filterRefs.current[cat.id] = el)}
+                onClick={() => handleFilterClick(cat.id)}
+                className={`flex-shrink-0 px-6 py-2.5 rounded-full font-medium transition whitespace-nowrap ${
                   filter === cat.id
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'

@@ -31,16 +31,16 @@ const HomePage = () => {
               VinFast - Vì một tương lai xanh<br />
               thông minh và bền vững
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4">
               <Link
                 to="/xe"
-                className="bg-blue-600 text-white px-10 py-4 rounded text-[14px] font-semibold hover:bg-blue-700 transition uppercase"
+                className="bg-blue-600 text-white px-10 py-4 rounded text-[14px] font-semibold hover:bg-blue-700 transition uppercase text-center"
               >
                 Khám phá xe
               </Link>
               <Link
                 to="/dat-lai-thu"
-                className="border-2 border-white text-white px-10 py-4 rounded text-[14px] font-semibold hover:bg-white hover:text-gray-800 transition uppercase"
+                className="border-2 border-white text-white px-10 py-4 rounded text-[14px] font-semibold hover:bg-white hover:text-gray-800 transition uppercase text-center"
               >
                 Đặt lái thử
               </Link>
